@@ -1,0 +1,7 @@
+speex (1.2rc1-5slp2) unstable; urgency=low
+
+  * Initial Release. 
+  * Git: unmodified/speex
+  * Tag: speex_1.2rc1-5slp2
+
+ -- Hyunseok Lee <hs7388.lee@samsung.com>  Wed, 07 Dec 2011 11:48:26 +0900
