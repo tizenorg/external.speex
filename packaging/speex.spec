@@ -6,6 +6,7 @@ Group:      System/Libraries
 License:    BSD
 URL:        http://www.speex.org/
 Source0:    http://downloads.xiph.org/releases/speex/%{name}-1.2rc1.tar.gz
+Source1001: packaging/speex.manifest 
 Requires(post):  /sbin/ldconfig
 Requires(postun):  /sbin/ldconfig
 BuildRequires:  pkgconfig(ogg)
@@ -44,6 +45,7 @@ speech. This package contains development files for %{name}
 
 
 %build
+cp %{SOURCE1001} .
 
 %configure -disable-static \
 %ifarch %arm
@@ -72,12 +74,14 @@ rm -f $RPM_BUILD_ROOT%{_docdir}/speex/manual.pdf
 
 
 %files
+%manifest speex.manifest
 %defattr(-,root,root,-)
 %doc COPYING
 %{_libdir}/libspeex*.so.*
 
 
 %files tools
+%manifest speex.manifest
 %defattr(-,root,root,-)
 %{_bindir}/speexenc
 %{_bindir}/speexdec
@@ -85,6 +89,7 @@ rm -f $RPM_BUILD_ROOT%{_docdir}/speex/manual.pdf
 %doc %{_mandir}/man1/speexdec.1*
 
 %files devel
+%manifest speex.manifest
 %defattr(-,root,root,-)
 %doc doc/manual.pdf
 %{_includedir}/speex
