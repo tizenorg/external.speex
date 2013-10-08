@@ -58,9 +58,12 @@ make %{?jobs:-j%jobs}
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/license
+cp COPYING %{buildroot}/usr/share/license/%{name}
 %make_install
 
 rm -f $RPM_BUILD_ROOT%{_docdir}/speex/manual.pdf
+
 
 
 
@@ -76,7 +79,7 @@ rm -f $RPM_BUILD_ROOT%{_docdir}/speex/manual.pdf
 %defattr(-,root,root,-)
 %doc COPYING
 %{_libdir}/libspeex*.so.*
-
+/usr/share/license/%{name}
 
 %files tools
 %defattr(-,root,root,-)
