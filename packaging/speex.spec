@@ -7,7 +7,7 @@
 Name:       speex
 Summary:    A voice compression format (codec)
 Version:    1.2rc1
-Release:    4
+Release:    5
 Group:      System/Libraries
 License:    BSD
 URL:        http://www.speex.org/
@@ -87,8 +87,8 @@ rm -f $RPM_BUILD_ROOT%{_docdir}/speex/manual.pdf
 %{_libdir}/libspeex*.so.*
 /usr/share/license/%{name}
 
-
 %files tools
+%manifest tools.manifest
 %defattr(-,root,root,-)
 %{_bindir}/speexenc
 %{_bindir}/speexdec
